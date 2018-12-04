@@ -1,0 +1,26 @@
+%box {
+  box-shadow: 0 0 5px black;
+  margin: 10px;
+}
+@function px($value){
+  @return $value/2 + px;
+}
+.smallBox {
+  width: px(100);  
+  height: px(100);
+  @extend %box;
+}
+.bigBox {
+  width: px(300);
+  height: px(300);
+  @extend %box;
+}
+
+article {
+  > section {
+    .textAside {
+      width: px(20); height: px(20);
+      @extend %box;
+    }
+  }
+}
